@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services-config>
+    <services>
+        <service id="amfphp-flashremoting-service" class="flex.messaging.services.RemotingService" messageTypes="flex.messaging.messages.RemotingMessage">
+            <destination id="kohana">
+                <channels>
+                    <channel ref="zend-amf-kohana"/>
+                </channels>
+                <properties>
+                    <source>*</source>
+                </properties>
+            </destination>
+        </service>
+    </services>
+    <channels>
+        <channel-definition id="zend-amf-kohana" class="mx.messaging.channels.AMFChannel">
+            <endpoint uri="http://yourdomain.com:80/amf/"  class="flex.messaging.endpoints.AMFEndpoint"/>
+        </channel-definition>
+    </channels>
+</services-config>

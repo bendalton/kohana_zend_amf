@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical">
+
+
+<mx:RemoteObject id="service" destination="kohana" source="Amf_Examples_Controller">
+	<mx:method name="hello_world" />
+</mx:RemoteObject>
+<mx:TextInput id="nameInput" enter="service.hello_world(nameInput.text)"/>
+
+<mx:Label text="AMF Result"/>
+<mx:Label text="{service.hello_world.lastResult}"/>
+
+</mx:Application>
